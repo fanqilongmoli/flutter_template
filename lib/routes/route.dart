@@ -11,6 +11,7 @@ final List<Map<String, Widget>> pathToWidgetMap = [
   {"/widget/Dialog": DialogPage()},
   {"/widget/Form": FormPage()},
   {"/widget/SimpleGridView": SimpleGridViewPage()},
+  {"/widget/GridView": GridViewPage()},
   {"/container/Wrap": WrapPage()},
 ];
 
@@ -19,6 +20,7 @@ final Map<String, IconData> icons = {
   "/widget/Dialog": Icons.map,
   "/widget/Form": Icons.format_color_text,
   "/widget/SimpleGridView": Icons.grid_on,
+  "/widget/GridView": Icons.grid_off,
   "/container/Wrap": Icons.wrap_text,
 };
 
