@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_template/container/align.dart';
 import 'package:flutter_template/container/scaffold.dart';
+import 'package:flutter_template/container/sliver_app_bar.dart';
 import 'package:flutter_template/fun/blur.dart';
 import 'package:flutter_template/container/wrap.dart';
 import 'package:flutter_template/model/category.dart';
@@ -29,6 +30,7 @@ final List<Map<String, Widget>> pathToWidgetMap = [
   {"/widget/SwitchCheckbox": SwitchCheckboxPage()},
   {"/widget/Text": TextPage()},
   {"/container/Scaffold": ScaffoldPage()},
+  {"/container/SliverAppBarPage": SliverAppBarPage()},
   {"/container/Align": AlignPage()},
   {"/container/Wrap": WrapPage()},
   {"/fun/Blur": BlurPage()},
@@ -50,6 +52,7 @@ final Map<String, IconData> icons = {
   "/container/Align": Icons.format_align_center,
   "/container/Wrap": Icons.wrap_text,
   "/container/Scaffold": Icons.wifi_tethering,
+  "/container/SliverAppBarPage":Icons.slideshow,
   "/fun/Blur": Icons.blur_on,
 };
 

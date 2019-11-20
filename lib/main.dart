@@ -7,7 +7,7 @@ import 'package:flutter/rendering.dart';
 
 void main() {
   /// denug 打开显示边界布局
- debugPaintSizeEnabled = true;
+ //debugPaintSizeEnabled = true;
   runApp(MainApp());
 }
 
