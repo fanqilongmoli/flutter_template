@@ -5,6 +5,12 @@ import 'package:flutter_template/widget/button.dart';
 import 'package:flutter_template/widget/dialog.dart';
 import 'package:flutter_template/widget/form.dart';
 import 'package:flutter_template/widget/grid_view.dart';
+import 'package:flutter_template/widget/image.dart';
+import 'package:flutter_template/widget/input.dart';
+import 'package:flutter_template/widget/list_view.dart';
+import 'package:flutter_template/widget/progress.dart';
+import 'package:flutter_template/widget/switch_checkbox.dart';
+import 'package:flutter_template/widget/text.dart';
 
 final List<Map<String, Widget>> pathToWidgetMap = [
   {"/widget/Button": ButtonPage()},
@@ -12,6 +18,13 @@ final List<Map<String, Widget>> pathToWidgetMap = [
   {"/widget/Form": FormPage()},
   {"/widget/SimpleGridView": SimpleGridViewPage()},
   {"/widget/GridView": GridViewPage()},
+  {"/widget/Image": ImagePage()},
+  {"/widget/Input": InputPage()},
+  {"/widget/SimpleListView": SimpleListViewPage()},
+  {"/widget/ListView": ListViewPage()},
+  {"/widget/Progress": ProgressPage()},
+  {"/widget/SwitchCheckbox": SwitchCheckboxPage()},
+  {"/widget/Text": TextPage()},
   {"/container/Wrap": WrapPage()},
 ];
 
@@ -21,6 +34,13 @@ final Map<String, IconData> icons = {
   "/widget/Form": Icons.format_color_text,
   "/widget/SimpleGridView": Icons.grid_on,
   "/widget/GridView": Icons.grid_off,
+  "/widget/Image": Icons.image,
+  "/widget/Input": Icons.input,
+  "/widget/SimpleListView": Icons.list,
+  "/widget/ListView": Icons.format_list_numbered_rtl,
+  "/widget/Progress": Icons.access_time,
+  "/widget/SwitchCheckbox": Icons.check_box,
+  "/widget/Text": Icons.text_format,
   "/container/Wrap": Icons.wrap_text,
 };
 
