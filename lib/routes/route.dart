@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_template/container/align.dart';
+import 'package:flutter_template/container/scaffold.dart';
+import 'package:flutter_template/fun/blur.dart';
 import 'package:flutter_template/container/wrap.dart';
 import 'package:flutter_template/model/category.dart';
 import 'package:flutter_template/widget/button.dart';
@@ -25,7 +28,10 @@ final List<Map<String, Widget>> pathToWidgetMap = [
   {"/widget/Progress": ProgressPage()},
   {"/widget/SwitchCheckbox": SwitchCheckboxPage()},
   {"/widget/Text": TextPage()},
+  {"/container/Scaffold": ScaffoldPage()},
+  {"/container/Align": AlignPage()},
   {"/container/Wrap": WrapPage()},
+  {"/fun/Blur": BlurPage()},
 ];
 
 final Map<String, IconData> icons = {
@@ -41,7 +47,10 @@ final Map<String, IconData> icons = {
   "/widget/Progress": Icons.access_time,
   "/widget/SwitchCheckbox": Icons.check_box,
   "/widget/Text": Icons.text_format,
+  "/container/Align": Icons.format_align_center,
   "/container/Wrap": Icons.wrap_text,
+  "/container/Scaffold": Icons.wifi_tethering,
+  "/fun/Blur": Icons.blur_on,
 };
 
 List<CategoryBean> getCategoryList() {
