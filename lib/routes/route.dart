@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_template/container/align.dart';
+import 'package:flutter_template/container/constrained_box.dart';
+import 'package:flutter_template/container/container.dart';
+import 'package:flutter_template/container/decorated_box.dart';
+import 'package:flutter_template/container/flex.dart';
+import 'package:flutter_template/container/padding.dart';
+import 'package:flutter_template/container/row_column.dart';
 import 'package:flutter_template/container/scaffold.dart';
 import 'package:flutter_template/container/sliver_app_bar.dart';
 import 'package:flutter_template/fun/blur.dart';
@@ -31,6 +37,12 @@ final List<Map<String, Widget>> pathToWidgetMap = [
   {"/widget/Text": TextPage()},
   {"/container/Scaffold": ScaffoldPage()},
   {"/container/SliverAppBarPage": SliverAppBarPage()},
+  {"/container/ConstrainedBox": ConstrainedBoxPage()},
+  {"/container/DecoratedBox": DecoratedBoxPage()},
+  {"/container/RowColumn": RowColumnPage()},
+  {"/container/Flex": FlexExpandedPage()},
+  {"/container/Container": ContainerPage()},
+  {"/container/Padding": PaddingPage()},
   {"/container/Align": AlignPage()},
   {"/container/Wrap": WrapPage()},
   {"/fun/Blur": BlurPage()},
@@ -52,7 +64,13 @@ final Map<String, IconData> icons = {
   "/container/Align": Icons.format_align_center,
   "/container/Wrap": Icons.wrap_text,
   "/container/Scaffold": Icons.wifi_tethering,
-  "/container/SliverAppBarPage":Icons.slideshow,
+  "/container/SliverAppBarPage": Icons.slideshow,
+  "/container/ConstrainedBox": Icons.inbox,
+  "/container/DecoratedBox": Icons.markunread_mailbox,
+  "/container/RowColumn": Icons.view_column,
+  "/container/Flex": Icons.widgets,
+  "/container/Container": Icons.check_box_outline_blank,
+  "/container/Padding": Icons.gamepad,
   "/fun/Blur": Icons.blur_on,
 };
 
