@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_template/animation/animation_container.dart';
+import 'package:flutter_template/animation/animation_widget.dart';
+import 'package:flutter_template/animation/hero_animation.dart';
+import 'package:flutter_template/animation/scale_animation.dart';
+import 'package:flutter_template/animation/stagger_animation.dart';
 import 'package:flutter_template/container/align.dart';
 import 'package:flutter_template/container/constrained_box.dart';
 import 'package:flutter_template/container/container.dart';
@@ -47,6 +52,11 @@ final List<Map<String, Widget>> pathToWidgetMap = [
   {"/container/Align": AlignPage()},
   {"/container/Wrap": WrapPage()},
   {"/container/Stack": StackPage()},
+  {"/animation/ScaleAnimation": ScaleAnimationPage()},
+  {"/animation/AnimationWidget": AnimationWidgetPage()},
+  {"/animation/HeroAnimation": HeroAnimationPage()},
+  {"/animation/StaggerAnimation": StaggerAnimationPage()},
+  {"/animation/AnimationContainer": AnimationContainerPage()},
   {"/fun/Blur": BlurPage()},
 ];
 
@@ -74,6 +84,11 @@ final Map<String, IconData> icons = {
   "/container/Container": Icons.check_box_outline_blank,
   "/container/Padding": Icons.gamepad,
   "/container/Stack": Icons.vertical_align_center,
+  "/animation/ScaleAnimation": Icons.crop_landscape,
+  "/animation/AnimationWidget": Icons.crop_landscape,
+  "/animation/HeroAnimation": Icons.face,
+  "/animation/StaggerAnimation": Icons.map,
+  "/animation/AnimationContainer": Icons.scatter_plot,
   "/fun/Blur": Icons.blur_on,
 };
 
