@@ -16,6 +16,9 @@ import 'package:flutter_template/container/sliver_app_bar.dart';
 import 'package:flutter_template/container/stack.dart';
 import 'package:flutter_template/fun/blur.dart';
 import 'package:flutter_template/container/wrap.dart';
+import 'package:flutter_template/fun/clip.dart';
+import 'package:flutter_template/fun/transform.dart';
+import 'package:flutter_template/fun/will_pop_scope.dart';
 import 'package:flutter_template/model/category.dart';
 import 'package:flutter_template/widget/button.dart';
 import 'package:flutter_template/widget/dialog.dart';
@@ -57,7 +60,13 @@ final List<Map<String, Widget>> pathToWidgetMap = [
   {"/animation/HeroAnimation": HeroAnimationPage()},
   {"/animation/StaggerAnimation": StaggerAnimationPage()},
   {"/animation/AnimationContainer": AnimationContainerPage()},
+  {"/fun/Transform": TransformPage()},
   {"/fun/Blur": BlurPage()},
+  {"/fun/Clip": ClipPage()},
+  {"/fun/WillPopScope": WillPopScopePage()},
+//  {"/fun/InheritedWidget": InheritedWidgetPage()},
+//  {"/fun/GestureDetector": GestureDetectorPage()},
+//  {"/fun/Listener": ListenerPage()},
 ];
 
 final Map<String, IconData> icons = {
@@ -89,6 +98,12 @@ final Map<String, IconData> icons = {
   "/animation/HeroAnimation": Icons.face,
   "/animation/StaggerAnimation": Icons.map,
   "/animation/AnimationContainer": Icons.scatter_plot,
+  "/fun/Clip": Icons.all_inclusive,
+  "/fun/Transform": Icons.directions_transit,
+  "/fun/WillPopScope": Icons.arrow_back,
+  "/fun/InheritedWidget": Icons.data_usage,
+  "/fun/Listener": Icons.screen_share,
+  "/fun/GestureDetector": Icons.gesture,
   "/fun/Blur": Icons.blur_on,
 };
 
