@@ -8,6 +8,7 @@ import 'package:flutter_template/container/padding.dart';
 import 'package:flutter_template/container/row_column.dart';
 import 'package:flutter_template/container/scaffold.dart';
 import 'package:flutter_template/container/sliver_app_bar.dart';
+import 'package:flutter_template/container/stack.dart';
 import 'package:flutter_template/fun/blur.dart';
 import 'package:flutter_template/container/wrap.dart';
 import 'package:flutter_template/model/category.dart';
@@ -45,6 +46,7 @@ final List<Map<String, Widget>> pathToWidgetMap = [
   {"/container/Padding": PaddingPage()},
   {"/container/Align": AlignPage()},
   {"/container/Wrap": WrapPage()},
+  {"/container/Stack": StackPage()},
   {"/fun/Blur": BlurPage()},
 ];
 
@@ -71,6 +73,7 @@ final Map<String, IconData> icons = {
   "/container/Flex": Icons.widgets,
   "/container/Container": Icons.check_box_outline_blank,
   "/container/Padding": Icons.gamepad,
+  "/container/Stack": Icons.vertical_align_center,
   "/fun/Blur": Icons.blur_on,
 };
 
