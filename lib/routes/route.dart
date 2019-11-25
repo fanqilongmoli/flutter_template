@@ -17,6 +17,9 @@ import 'package:flutter_template/container/stack.dart';
 import 'package:flutter_template/fun/blur.dart';
 import 'package:flutter_template/container/wrap.dart';
 import 'package:flutter_template/fun/clip.dart';
+import 'package:flutter_template/fun/gesture_detector.dart';
+import 'package:flutter_template/fun/inherited_widget.dart';
+import 'package:flutter_template/fun/listener.dart';
 import 'package:flutter_template/fun/transform.dart';
 import 'package:flutter_template/fun/will_pop_scope.dart';
 import 'package:flutter_template/model/category.dart';
@@ -64,9 +67,9 @@ final List<Map<String, Widget>> pathToWidgetMap = [
   {"/fun/Blur": BlurPage()},
   {"/fun/Clip": ClipPage()},
   {"/fun/WillPopScope": WillPopScopePage()},
-//  {"/fun/InheritedWidget": InheritedWidgetPage()},
-//  {"/fun/GestureDetector": GestureDetectorPage()},
-//  {"/fun/Listener": ListenerPage()},
+  {"/fun/InheritedWidget": InheritedWidgetPage()},
+  {"/fun/GestureDetector": GestureDetectorPage()},
+  {"/fun/Listener": ListenerPage()},
 ];
 
 final Map<String, IconData> icons = {
