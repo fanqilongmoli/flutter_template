@@ -1,0 +1,116 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter_template/common/page.dart';
+
+class GradientButtonPage extends BasePage {
+  GradientButtonPage() : super("GradientButton");
+
+  @override
+  Widget generateChildren(BuildContext context) {
+    return Center(
+      child: Column(
+        children: <Widget>[
+          SizedBox(height: 80),
+          GradientButton(
+            width: 90,
+            height: 40,
+            child: Text(
+              "login",
+              style: TextStyle(color: Colors.white),
+            ),
+            onPressed: onTap,
+          ),
+          SizedBox(height: 80),
+          GradientButton(
+            width: 90,
+            height: 40,
+            colors: [
+              Colors.red[200],
+              Colors.red[600],
+              Colors.red[900],
+            ],
+            splashColor: Colors.lightBlue,
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+            child: Text(
+              "Login",
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
+            onPressed: onTap,
+          ),
+          SizedBox(height: 80),
+          GradientButton(
+            width: 90,
+            height: 40,
+            colors: [
+              Colors.red[300],
+              Colors.teal[300],
+              Colors.deepPurpleAccent[400],
+              Colors.amberAccent[400],
+            ],
+            borderRadius: BorderRadius.all(Radius.circular(20)),
+            child: Text(
+              "Login",
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
+            onPressed: onTap,
+          ),
+          SizedBox(height: 80),
+        ],
+      ),
+    );
+  }
+
+  onTap() {
+    print("button click");
+  }
+}
+
+///GradientButton 自定义view
+class GradientButton extends StatelessWidget {
+  final double width;
+  final double height;
+  final Widget child;
+  final List<Color> colors;
+  final Color splashColor;
+  final BorderRadius borderRadius;
+  final GestureTapCallback onPressed;
+
+  GradientButton({
+    this.width,
+    this.height,
+    this.colors,
+    this.splashColor,
+    this.borderRadius,
+    this.onPressed,
+    @required this.child,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    ThemeData theme = Theme.of(context);
+    List<Color> _colors = colors ??
+        [theme.primaryColor, theme.primaryColorDark ?? theme.primaryColor];
+    return DecoratedBox(
+      decoration: BoxDecoration(
+          gradient: LinearGradient(colors: _colors),
+          borderRadius: borderRadius),
+      child: Material(
+        type: MaterialType.transparency,
+        child: InkWell(
+          splashColor: splashColor ?? _colors.last,
+          highlightColor: Colors.transparent,
+          borderRadius: borderRadius,
+          onTap: onPressed,
+          child: ConstrainedBox(
+            constraints: BoxConstraints.tightFor(height: height, width: width),
+            child: Center(child: child),
+          ),
+        ),
+      ),
+    );
+  }
+}

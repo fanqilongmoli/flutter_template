@@ -14,6 +14,9 @@ import 'package:flutter_template/container/row_column.dart';
 import 'package:flutter_template/container/scaffold.dart';
 import 'package:flutter_template/container/sliver_app_bar.dart';
 import 'package:flutter_template/container/stack.dart';
+import 'package:flutter_template/custom_widget/gradient_button.dart';
+import 'package:flutter_template/custom_widget/taiji_widget.dart';
+import 'package:flutter_template/custom_widget/wave_loading_widget.dart';
 import 'package:flutter_template/fun/blur.dart';
 import 'package:flutter_template/container/wrap.dart';
 import 'package:flutter_template/fun/clip.dart';
@@ -70,6 +73,9 @@ final List<Map<String, Widget>> pathToWidgetMap = [
   {"/fun/InheritedWidget": InheritedWidgetPage()},
   {"/fun/GestureDetector": GestureDetectorPage()},
   {"/fun/Listener": ListenerPage()},
+  {"/customWidget/GradientButton": GradientButtonPage()},
+  {"/customWidget/TaijiWidget": TaijiWidgetPage()},
+  {"/customWidget/WaveLoadingWidget": WaveLoadingWidgetPage()},
 ];
 
 final Map<String, IconData> icons = {
@@ -108,6 +114,9 @@ final Map<String, IconData> icons = {
   "/fun/Listener": Icons.screen_share,
   "/fun/GestureDetector": Icons.gesture,
   "/fun/Blur": Icons.blur_on,
+  "/customWidget/GradientButton": Icons.gradient,
+  "/customWidget/TaijiWidget": Icons.swap_horizontal_circle,
+  "/customWidget/WaveLoadingWidget": Icons.cloud_download,
 };
 
 List<CategoryBean> getCategoryList() {
