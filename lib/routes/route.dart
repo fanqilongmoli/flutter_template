@@ -13,6 +13,7 @@ import 'package:flutter_template/container/padding.dart';
 import 'package:flutter_template/container/row_column.dart';
 import 'package:flutter_template/container/scaffold.dart';
 import 'package:flutter_template/container/sliver_app_bar.dart';
+import 'package:flutter_template/container/sliver_box.dart';
 import 'package:flutter_template/container/sliver_persistent_header.dart';
 import 'package:flutter_template/container/stack.dart';
 import 'package:flutter_template/custom_widget/gradient_button.dart';
@@ -54,6 +55,7 @@ final List<Map<String, Widget>> pathToWidgetMap = [
   {"/container/Scaffold": ScaffoldPage()},
   {"/container/SliverAppBarPage": SliverAppBarPage()},
   {"/container/SliverHeader": SliverHeader()},
+  {"/container/SliverToBoxAdapter": SliverBoxPage()},
   {"/container/ConstrainedBox": ConstrainedBoxPage()},
   {"/container/DecoratedBox": DecoratedBoxPage()},
   {"/container/RowColumn": RowColumnPage()},
@@ -98,6 +100,7 @@ final Map<String, IconData> icons = {
   "/container/Scaffold": Icons.wifi_tethering,
   "/container/SliverAppBarPage": Icons.slideshow,
   "/container/SliverHeader": Icons.slideshow,
+  "/container/SliverToBoxAdapter": Icons.slideshow,
   "/container/ConstrainedBox": Icons.inbox,
   "/container/DecoratedBox": Icons.markunread_mailbox,
   "/container/RowColumn": Icons.view_column,

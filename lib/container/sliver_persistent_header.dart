@@ -2,7 +2,7 @@ import 'dart:math';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_template/models/product.dart';
+import 'package:flutter_template/models/models.dart';
 
 /// SliverPersistentHeader 给一个可滑动是视图添加一个头（实际上，在CustomScrollView的slivers列表中，header可以在视图的任何位置中，不一定要在顶部）
 /// 这个Header可以随着划定展开和收起，使用inned 和 floating 属性来控制收起时Header是否展示（ pinned 和 floating 属性不可以同时为 true ）,
@@ -63,6 +63,7 @@ class SliverHeader extends StatefulWidget {
 class _SliverHeaderState extends State<SliverHeader> {
   bool floating = false;
   bool pinned = true;
+  ProductTools productTools = ProductTools();
 
   @override
   Widget build(BuildContext context) {
@@ -77,7 +78,8 @@ class _SliverHeaderState extends State<SliverHeader> {
           SliverGrid.count(
             crossAxisCount: 3,
             children: _products.map((product) {
-              return _buildItemGrid(product);
+
+              return ProductTools.buildItemGrid(product);
             }).toList(),
           ),
           _buildHeader(1),
@@ -85,7 +87,7 @@ class _SliverHeaderState extends State<SliverHeader> {
             itemExtent: 100.0,
             delegate: SliverChildListDelegate(
               products.map((product) {
-                return _buildItemList(product);
+                return ProductTools.buildItemList(product);
               }).toList(),
             ),
           ),
@@ -99,7 +101,7 @@ class _SliverHeaderState extends State<SliverHeader> {
             ),
             delegate: new SliverChildBuilderDelegate(
               (BuildContext context, int index) {
-                return _buildItemGrid2(_products2[index]);
+                return productTools.buildItemGrid2(_products2[index]);
               },
               childCount: _products2.length,
             ),
@@ -182,121 +184,6 @@ class _SliverHeaderState extends State<SliverHeader> {
 //              ),
 //            ),
 //          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildItemGrid(ProductItem product) {
-    return Padding(
-      padding: EdgeInsets.fromLTRB(0.0, 5.0, 0.0, 5.0),
-      child: Card(
-        child: Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              ClipRRect(
-                child: SizedBox(
-                  width: 65.0,
-                  height: 65.0,
-                  child: Image.asset(
-                    product.asset,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                borderRadius: BorderRadius.all(Radius.circular(8.0)),
-              ),
-              Expanded(
-                child: Padding(
-                  padding: EdgeInsets.only(top: 6.0),
-                  child: Text(
-                    product.name,
-                    textAlign: TextAlign.center,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildItemList(ProductItem product) {
-    return Padding(
-      padding: EdgeInsets.fromLTRB(0.0, 5.0, 0.0, 5.0),
-      child: Card(
-        child: Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Padding(
-                padding: EdgeInsets.only(left: 20.0),
-                child: ClipRRect(
-                  child: SizedBox(
-                    width: 65.0,
-                    height: 65.0,
-                    child: Image.asset(
-                      product.asset,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                ),
-              ),
-              Expanded(
-                child: Padding(
-                  padding: EdgeInsets.only(left: 15.0),
-                  child: Text(
-                    product.name,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildItemGrid2(ProductItem product) {
-    return Padding(
-      padding: EdgeInsets.fromLTRB(0.0, 5.0, 0.0, 5.0),
-      child: Card(
-        child: Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Padding(
-                padding: EdgeInsets.only(left: 10.0),
-                child: ClipRRect(
-                  child: SizedBox(
-                    width: 20.0,
-                    height: 20.0,
-                    child: Image.asset(
-                      product.asset,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  borderRadius: BorderRadius.all(Radius.circular(5.0)),
-                ),
-              ),
-              Expanded(
-                child: Padding(
-                  padding: EdgeInsets.only(left: 6.0),
-                  child: Text(
-                    product.name,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ),
-              ),
-            ],
-          ),
         ),
       ),
     );
