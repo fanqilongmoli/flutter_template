@@ -12,6 +12,7 @@ import 'package:flutter_template/container/flex.dart';
 import 'package:flutter_template/container/padding.dart';
 import 'package:flutter_template/container/row_column.dart';
 import 'package:flutter_template/container/scaffold.dart';
+import 'package:flutter_template/container/scroll_physics.dart';
 import 'package:flutter_template/container/sliver_app_bar.dart';
 import 'package:flutter_template/container/sliver_box.dart';
 import 'package:flutter_template/container/sliver_persistent_header.dart';
@@ -56,6 +57,7 @@ final List<Map<String, Widget>> pathToWidgetMap = [
   {"/container/SliverAppBarPage": SliverAppBarPage()},
   {"/container/SliverHeader": SliverHeader()},
   {"/container/SliverToBoxAdapter": SliverBoxPage()},
+  {"/container/ScrollPhysicsPage": ScrollPhysicsPage()},
   {"/container/ConstrainedBox": ConstrainedBoxPage()},
   {"/container/DecoratedBox": DecoratedBoxPage()},
   {"/container/RowColumn": RowColumnPage()},
@@ -101,6 +103,7 @@ final Map<String, IconData> icons = {
   "/container/SliverAppBarPage": Icons.slideshow,
   "/container/SliverHeader": Icons.slideshow,
   "/container/SliverToBoxAdapter": Icons.slideshow,
+  "/container/ScrollPhysicsPage": Icons.slideshow,
   "/container/ConstrainedBox": Icons.inbox,
   "/container/DecoratedBox": Icons.markunread_mailbox,
   "/container/RowColumn": Icons.view_column,
