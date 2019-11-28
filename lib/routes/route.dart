@@ -17,6 +17,7 @@ import 'package:flutter_template/container/sliver_app_bar.dart';
 import 'package:flutter_template/container/sliver_box.dart';
 import 'package:flutter_template/container/sliver_persistent_header.dart';
 import 'package:flutter_template/container/stack.dart';
+import 'package:flutter_template/custom_widget/ciecle_floating_menu.dart';
 import 'package:flutter_template/custom_widget/gradient_button.dart';
 import 'package:flutter_template/custom_widget/taiji_widget.dart';
 import 'package:flutter_template/custom_widget/wave_loading_widget.dart';
@@ -82,6 +83,7 @@ final List<Map<String, Widget>> pathToWidgetMap = [
   {"/customWidget/GradientButton": GradientButtonPage()},
   {"/customWidget/TaijiWidget": TaijiWidgetPage()},
   {"/customWidget/WaveLoadingWidget": WaveLoadingWidgetPage()},
+  {"/customWidget/FloatingMenuPage": FloatingMenuPage()},
 ];
 
 final Map<String, IconData> icons = {
@@ -126,6 +128,7 @@ final Map<String, IconData> icons = {
   "/customWidget/GradientButton": Icons.gradient,
   "/customWidget/TaijiWidget": Icons.swap_horizontal_circle,
   "/customWidget/WaveLoadingWidget": Icons.cloud_download,
+  "/customWidget/FloatingMenuPage": Icons.cloud_download,
 };
 
 List<CategoryBean> getCategoryList() {
