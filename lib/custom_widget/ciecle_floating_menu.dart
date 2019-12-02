@@ -2,57 +2,100 @@ import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_template/common/page.dart';
+import 'package:oktoast/oktoast.dart';
 
-class FloatingMenuPage extends BasePage {
-  FloatingMenuPage() : super("CircleFloatingMenu", includeScrollView: false);
-
+class FloatingMenuPage extends StatelessWidget {
   @override
-  Widget generateChildren(BuildContext context) {
-    return Container(
-      child: Stack(
-        children: <Widget>[
-          Positioned(
-            width: 100,
-            height: 100,
-            child: CircleFloatingMenu(
-              floatingButton: FloatingButton(
-                icon: Icons.add,
-                size: 30,
-                color: Colors.redAccent,
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return OKToast(
+      textStyle: TextStyle(fontSize: 18.0, color: Colors.white),
+      backgroundColor: Colors.transparent,
+      radius: 8.0,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('CircleFloatingMenu'),
+        ),
+        body: Stack(
+          children: <Widget>[
+            Positioned(
+              width: 300,
+              height: 300,
+              child: CircleFloatingMenu(
+                menuSelected: (index) {
+                  showToast('You choose NO.$index');
+                },
+                startAngle: degToRad(-90.0),
+                endAngle: degToRad(90.0),
+                floatingButton: FloatingButton(
+                  icon: Icons.add,
+                  size: 30,
+                  color: Colors.redAccent,
+                ),
+                subMenus: <Widget>[
+                  FloatingButton(
+                    icon: Icons.widgets,
+                  ),
+                  FloatingButton(
+                    icon: Icons.book,
+                  ),
+                  FloatingButton(
+                    icon: Icons.translate,
+                  ),
+                  FloatingButton(
+                    icon: Icons.alarm_add,
+                  ),
+                  FloatingButton(
+                    icon: Icons.bluetooth,
+                  ),
+                ],
               ),
-              subMenus: <Widget>[
-                FloatingButton(
-                  icon: Icons.widgets,
-                ),
-                FloatingButton(
-                  icon: Icons.book,
-                ),
-                FloatingButton(
-                  icon: Icons.translate,
-                ),
-                FloatingButton(
-                  icon: Icons.alarm_add,
-                ),
-                FloatingButton(
-                  icon: Icons.bluetooth,
-                ),
-              ],
-              startAngle: degToRad(-90.0),
-              endAngle: degToRad(90.0),
-              menuSelected: (index) {
-                showSnackBar(context, 'You choose NO.$index');
-              },
             ),
-          )
-        ],
+            Positioned(
+              width: 300.0,
+              height: 200.0,
+              bottom: 10.0,
+              child: CircleFloatingMenu(
+                menuSelected: (index) {
+                  showToast('You choose NO.$index');
+                },
+                floatingButton: FloatingButton(
+                  color: Colors.green,
+                  icon: Icons.add,
+                  size: 30.0,
+                ),
+                subMenus: <Widget>[
+                  FloatingButton(
+                    icon: Icons.widgets,
+                    elevation: 0.0,
+                  ),
+                  FloatingButton(
+                    icon: Icons.translate,
+                    elevation: 0.0,
+                  ),
+                  FloatingButton(
+                    icon: Icons.alarm_add,
+                    elevation: 0.0,
+                  ),
+                  FloatingButton(
+                    icon: Icons.bluetooth,
+                    elevation: 0.0,
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
 }
 
 //=========CircleFloatingMenu===============//
-enum MenuState { OPEN, CLOSE }
+enum MenuState {
+  OPEN,
+  CLOSE,
+}
 
 typedef MenuToggled<state> = void Function(MenuState state);
 typedef MenuSelected<index> = void Function(int index);
@@ -94,10 +137,11 @@ class _CircleFloatingMenuState extends State<CircleFloatingMenu>
 
   @override
   void initState() {
-    _animationController = new AnimationController(vsync: this)
-      ..addListener(() {
-        setState(() {});
-      });
+    _animationController =
+        new AnimationController(duration: widget.duration, vsync: this)
+          ..addListener(() {
+            setState(() {});
+          });
     _initAnimation();
     super.initState();
   }
@@ -197,7 +241,11 @@ class FloatingButton extends StatelessWidget {
   final double elevation;
 
   FloatingButton(
-      {Key key, this.icon, this.color, this.size, this.elevation = 2.0})
+      {Key key,
+      this.icon,
+      this.color = Colors.pinkAccent,
+      this.size,
+      this.elevation = 2.0})
       : super(key: key);
 
   @override
